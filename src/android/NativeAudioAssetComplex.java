@@ -47,6 +47,11 @@ public class NativeAudioAssetComplex implements OnPreparedListener, OnCompletion
 		invokePlay( false );
 	}
 	
+	public boolean isPlaying()
+	{
+		return mp.isLooping() || mp.isPlaying();
+	}
+	
 	private void invokePlay( Boolean loop )
 	{
 		Boolean playing = ( mp.isLooping() || mp.isPlaying() );

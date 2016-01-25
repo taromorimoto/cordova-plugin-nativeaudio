@@ -41,6 +41,16 @@ public class NativeAudioAsset
 		playIndex = playIndex % voices.size();
 	}
 
+	public boolean isPlaying()
+	{
+		for ( int x=0; x<voices.size(); x++)
+		{
+				NativeAudioAssetComplex voice = voices.get(x);
+				if (voice.isPlaying()) return true;
+		}
+		return false;
+	}
+
 	public boolean pause()
 	{
 		boolean wasPlaying = false;
